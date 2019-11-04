@@ -1,6 +1,6 @@
 // followed a tutorial @ 
 // https://www.robinwieruch.de/node-js-express-tutorial
-import 'dotenv/config';
+// import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import uuidv4 from 'uuid/v4';
