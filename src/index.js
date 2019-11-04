@@ -6,11 +6,23 @@ import express from 'express';
 import uuidv4 from 'uuid/v4';
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
+const fs = require('fs');
 
 const app = express()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//write json for debugging purposes
+function makeJson(jsonString){
+  fs.writeFile('./myPayload.json', jsonString, err => {
+    if (err) {
+        console.log('Error writing file', err)
+    } else {
+        console.log('Successfully wrote file')
+    }
+})
+}
 
 //@license Lighthouse Copyright 2017 Google Inc.
 //Code from Documentation
@@ -50,8 +62,8 @@ let messages = {
       text: 'Hello World',
       userId: '1',
     },
-  };
-  
+};
+
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
@@ -65,17 +77,24 @@ app.post('/messages', (req, res) => {
     };
     messages[id] = message;
     
+    console.log("message received " + message.text)
     launchChromeAndRunLighthouse(message.text, flags).then(results => {
-        return res.send(results.report)
+    //makeJson(results.report)
+      return res.send(results.report)
     })
 });
 
+/*
 app.listen(3000, () => 
     console.log('app listening to port 3000')
 );
+*/
 
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+/*
 app.listen(process.env.PORT, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`),
 );
-
-
+*/

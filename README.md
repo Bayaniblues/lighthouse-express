@@ -9,9 +9,14 @@ Lighthouse middleware in expressjs
 Open a second terminal
 
 
-        curl -X POST -H "Content-Type:application/json" http://localhost:3000/messages -d '{"text":"https://google.com"}'
+        curl -X POST -H "Content-Type:application/json" http://localhost:3000/messages -d '{"text":"http://google.com"}'
 
+        curl -X POST -H "Content-Type:application/json" https://afternoon-eyrie-40870.herokuapp.com/messages -d '{"text":"https://google.com"}'
 
+        ./ngrok http 3000
+
+https://e7c6e7ee.ngrok.io
+https://f70ba7ac.ngrok.io
 TOTO: 
 Create a post request to Django database
 Model Important metrics for website audit.
