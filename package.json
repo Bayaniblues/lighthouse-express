@@ -1,8 +1,10 @@
 {
-  "engines": {"node": "12.13.0"},
+  "engines": {
+    "node": "12.13.0"
+  },
   "name": "audit-bright",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lighthouse middleware in expressjs =",
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
@@ -23,5 +25,13 @@
     "express": "^4.17.1",
     "lighthouse": "^5.6.0",
     "uuid": "^3.3.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bayaniblues/lighthouse-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bayaniblues/lighthouse-express/issues"
+  },
+  "homepage": "https://github.com/Bayaniblues/lighthouse-express#readme"
 }
