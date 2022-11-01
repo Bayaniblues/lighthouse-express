@@ -23,7 +23,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "lighthouse": "^5.6.0",
+    "lighthouse": "^9.6.8",
     "uuid": "^3.3.3"
   },
   "repository": {
